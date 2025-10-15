@@ -1,4 +1,6 @@
-﻿namespace TestApp
+﻿using System.ComponentModel;
+
+namespace TestApp
 {
     partial class Form1
     {
@@ -64,6 +66,7 @@
             label11 = new Label();
             button3 = new Button();
             tabPage4 = new TabPage();
+            progressBar1 = new ProgressBar();
             label15 = new Label();
             numericUpDown11 = new NumericUpDown();
             label14 = new Label();
@@ -78,26 +81,27 @@
             label18 = new Label();
             label19 = new Label();
             button6 = new Button();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            backgroundWorker1 = new BackgroundWorker();
+            ((ISupportInitialize)numericUpDown1).BeginInit();
+            ((ISupportInitialize)numericUpDown2).BeginInit();
+            ((ISupportInitialize)numericUpDown3).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
+            ((ISupportInitialize)numericUpDown4).BeginInit();
+            ((ISupportInitialize)numericUpDown6).BeginInit();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown7).BeginInit();
+            ((ISupportInitialize)numericUpDown9).BeginInit();
+            ((ISupportInitialize)numericUpDown8).BeginInit();
+            ((ISupportInitialize)trackBar1).BeginInit();
+            ((ISupportInitialize)numericUpDown5).BeginInit();
+            ((ISupportInitialize)numericUpDown7).BeginInit();
             tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown13).BeginInit();
+            ((ISupportInitialize)numericUpDown11).BeginInit();
+            ((ISupportInitialize)numericUpDown10).BeginInit();
+            ((ISupportInitialize)trackBar2).BeginInit();
+            ((ISupportInitialize)numericUpDown12).BeginInit();
+            ((ISupportInitialize)numericUpDown13).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -496,6 +500,7 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(progressBar1);
             tabPage4.Controls.Add(label15);
             tabPage4.Controls.Add(numericUpDown11);
             tabPage4.Controls.Add(label14);
@@ -510,13 +515,21 @@
             tabPage4.Controls.Add(label18);
             tabPage4.Controls.Add(label19);
             tabPage4.Controls.Add(button6);
-            tabPage4.Location = new System.Drawing.Point(4, 34);
+            tabPage4.Location = new System.Drawing.Point(4, 35);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1154, 575);
+            tabPage4.Size = new Size(1154, 574);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Test";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new System.Drawing.Point(91, 240);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(945, 34);
+            progressBar1.TabIndex = 53;
+            progressBar1.Click += progressBar1_Click;
             // 
             // label15
             // 
@@ -593,15 +606,16 @@
             numericUpDown12.Size = new Size(198, 34);
             numericUpDown12.TabIndex = 39;
             numericUpDown12.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown12.ValueChanged += numericUpDown12_ValueChanged;
             // 
             // listBox4
             // 
             listBox4.Font = new Font("Mgen+ 2m regular", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
             listBox4.FormattingEnabled = true;
             listBox4.ItemHeight = 25;
-            listBox4.Location = new System.Drawing.Point(59, 240);
+            listBox4.Location = new System.Drawing.Point(59, 290);
             listBox4.Name = "listBox4";
-            listBox4.Size = new Size(1026, 329);
+            listBox4.Size = new Size(1026, 279);
             listBox4.TabIndex = 44;
             // 
             // label16
@@ -665,6 +679,12 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            backgroundWorker1.ProgressChanged += backgroundWorker1_ProgressChanged;
+            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -675,30 +695,30 @@
             Name = "Form1";
             Text = "TestApp";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((ISupportInitialize)numericUpDown1).EndInit();
+            ((ISupportInitialize)numericUpDown2).EndInit();
+            ((ISupportInitialize)numericUpDown3).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
+            ((ISupportInitialize)numericUpDown4).EndInit();
+            ((ISupportInitialize)numericUpDown6).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown7).EndInit();
+            ((ISupportInitialize)numericUpDown9).EndInit();
+            ((ISupportInitialize)numericUpDown8).EndInit();
+            ((ISupportInitialize)trackBar1).EndInit();
+            ((ISupportInitialize)numericUpDown5).EndInit();
+            ((ISupportInitialize)numericUpDown7).EndInit();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)trackBar2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown13).EndInit();
+            ((ISupportInitialize)numericUpDown11).EndInit();
+            ((ISupportInitialize)numericUpDown10).EndInit();
+            ((ISupportInitialize)trackBar2).EndInit();
+            ((ISupportInitialize)numericUpDown12).EndInit();
+            ((ISupportInitialize)numericUpDown13).EndInit();
             ResumeLayout(false);
         }
 
@@ -754,5 +774,7 @@
         private Button button6;
         private Label label15;
         private NumericUpDown numericUpDown11;
+        private ProgressBar progressBar1;
+        private BackgroundWorker backgroundWorker1;
     }
 }
