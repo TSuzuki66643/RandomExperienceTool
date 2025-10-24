@@ -168,20 +168,20 @@ namespace TestApp
         {
             listBox4.Items.Clear();
         }
-        public struct Setting
-        {
-            public double L1;
-            public double L2;
-            public double R1;
-            public double R2;
-            public double M1;
-            public double M2;
-            public double dt;
-            public double[] t;
-            public double tMax;
-            public double G;
-            public double[] state;
-        }
+        //public struct Setting
+        //{
+        //    public double L1;
+        //    public double L2;
+        //    public double R1;
+        //    public double R2;
+        //    public double M1;
+        //    public double M2;
+        //    public double dt;
+        //    public double[] t;
+        //    public double tMax;
+        //    public double G;
+        //    public double[] state;
+        //}
 
         public int nowvalue;
         public int a;
@@ -190,41 +190,41 @@ namespace TestApp
         public double LastResult;
         public int progressPoint;
         
-        public void Set(Setting data)
-        {
-            data.L1 = 1.0;
-            data.L2 = 0.5;
-            data.R1 = 60;
-            data.R2 = 120;
-            data.M1 = 2;
-            data.M2 = 1;
-            data.dt = 0.5;
+        //public void Set(Setting data)
+        //{
+        //    data.L1 = 1.0;
+        //    data.L2 = 0.5;
+        //    data.R1 = 60;
+        //    data.R2 = 120;
+        //    data.M1 = 2;
+        //    data.M2 = 1;
+        //    data.dt = 0.5;
 
-            data.tMax = 15;
-            data.G = 9.8;
+        //    data.tMax = 15;
+        //    data.G = 9.8;
 
 
-        }
+        //}
 
-        public struct Point
-        {
-            public double x;
-            public double y;
-            public double time;
-        }
+        //public struct Point
+        //{
+        //    public double x;
+        //    public double y;
+        //    public double time;
+        //}
         public string? path;
-        public struct Line
-        {
-            public double x1;
-            public double y1;
-            public double x2;
-            public double y2;
-            public double time;
-        }
-        public struct data_alpha
-        {
-            public double[] data;
-        }
+        //public struct Line
+        //{
+        //    public double x1;
+        //    public double y1;
+        //    public double x2;
+        //    public double y2;
+        //    public double time;
+        //}
+        //public struct data_alpha
+        //{
+        //    public double[] data;
+        //}
 
         public enum TabPageIndex
         {
@@ -234,15 +234,15 @@ namespace TestApp
             Multi = 3
         }
 
-        private double DegreeToRadian(double angle)
-        {
-            return Math.PI * angle / 180.0;
-        }
+        //private double DegreeToRadian(double angle)
+        //{
+        //    return Math.PI * angle / 180.0;
+        //}
 
-        private double RadianToDegree(double angle)
-        {
-            return angle * (180.0 / Math.PI);
-        }
+        //private double RadianToDegree(double angle)
+        //{
+        //    return angle * (180.0 / Math.PI);
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
