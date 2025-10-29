@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace TestApp
 {
@@ -97,6 +98,24 @@ namespace TestApp
         {
             progressBar1.Update();
         }
+
+        public void Test2()
+        {
+            Random rand = new Random();
+            int count = 0;
+            int x = (int)numericUpDown4.Value;
+            for (int i = 0; i < (int)numericUpDown6.Value; i++) 
+            {
+                double r = rand.NextDouble();
+                if (r < x * 0.01)
+                {
+                    count++;
+                }
+            }
+            double result = count / (double)numericUpDown6.Value;
+            string strResult2 = result.ToString("F6");
+            listBox2.Items.Add("Result = " + strResult2);
+        }
         public void Test(BackgroundWorker bgWorker)
         {
             progressPoint = 0;
@@ -189,7 +208,7 @@ namespace TestApp
         public int c;
         public double LastResult;
         public int progressPoint;
-        
+
         //public void Set(Setting data)
         //{
         //    data.L1 = 1.0;
@@ -272,7 +291,7 @@ namespace TestApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.culculate();
+            this.Test2();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -295,7 +314,7 @@ namespace TestApp
             progressBar1.Minimum = 0;
             progressBar1.Maximum = (int)numericUpDown11.Value;
             progressBar1.Value = 0;
-            
+
             //BackgroundWorkerのProgressChangedイベントが発生するようにする
             backgroundWorker1.WorkerReportsProgress = true;
             //DoWorkで取得できるパラメータ(10)を指定して、処理を開始する
@@ -354,12 +373,17 @@ namespace TestApp
             listBox4.Items.Add("</Result>");
             progressBar1.Value = 0;
             Trace.WriteLine("Process finished.");
-           
+
 
         }
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressBar1.Value = progressPoint;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
